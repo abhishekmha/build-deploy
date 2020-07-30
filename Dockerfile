@@ -24,19 +24,20 @@ ADD ./aws/config_ecs  /root/.ecs/config
 ADD ./aws/credentials  /root/.aws/credentials
 
 #Install docker 
-RUN apt-get update && \
-apt-get -y install apt-transport-https \
-     ca-certificates \
-     curl \
-     software-properties-common && \
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
-add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   bionic \
-   stable" && \
-apt-get update && \
-apt-cache policy docker-ce && \
-apt-get -y install docker-ce
+RUN apt-get install docker.io
+#apt-get -y install apt-transport-https \
+ 
+#    ca-certificates \
+ #    curl \
+  #   software-properties-common && \
+#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
+#add-apt-repository \
+   #"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   #bionic \
+   #stable" && \
+#apt-get update && \
+#apt-cache policy docker-ce && \
+#apt-get -y install docker-ce
 
 #Install maven
 RUN apt-get -y install maven
