@@ -25,7 +25,7 @@ ADD ./aws/credentials  /root/.aws/credentials
 
 #Install docker 
 RUN apt-get update && /
-apt-get install docker.io
+    apt-get install docker.io
 #apt-get -y install apt-transport-https \
  
 #    ca-certificates \
